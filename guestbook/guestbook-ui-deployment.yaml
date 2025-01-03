@@ -9,7 +9,7 @@ metadata:
           destinations:
             - service: slack
               recipients: [argocd]
-            - service: email
+            - service: email.gmail
               recipients: [djenkins.trss@gmail.com]
 spec:
   replicas: 1
