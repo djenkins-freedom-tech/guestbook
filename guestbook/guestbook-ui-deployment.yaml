@@ -3,7 +3,14 @@ kind: Deployment
 metadata:
   name: guestbook-ui
   annotations:
-    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: argocd
+#    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: argocd
+     notifications.argoproj.io/subscriptions: |
+        - trigger: [on-sync-succeeded]
+          destinations:
+            - service: slack
+              recipients: [argocd]
+            - service: email
+              recipients: [djenkins.trss@gmail.com]
 spec:
   replicas: 1
   revisionHistoryLimit: 3
