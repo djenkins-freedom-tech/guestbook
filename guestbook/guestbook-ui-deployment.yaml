@@ -1,7 +1,7 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: guestbook-ui
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: guestbook-ui
 #  annotations:
 #    notifications.argoproj.io/subscribe.on-sync-succeeded.webhook: ""
 #    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: argocd
@@ -12,19 +12,19 @@ metadata:
 #              recipients: [argocd]
 #            - service: email.gmail
 #              recipients: [djenkins.trss@gmail.com]
-spec:
-  replicas: 1
-  revisionHistoryLimit: 3
-  selector:
-    matchLabels:
-      app: guestbook-ui
-  template:
-    metadata:
-      labels:
-        app: guestbook-ui
-    spec:
-      containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
-        name: guestbook-ui
-        ports:
-        - containerPort: 80
+#spec:
+#  replicas: 1
+#  revisionHistoryLimit: 3
+#  selector:
+#    matchLabels:
+#      app: guestbook-ui
+#  template:
+#    metadata:
+#      labels:
+#        app: guestbook-ui
+#    spec:
+#      containers:
+#      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+#        name: guestbook-ui
+#        ports:
+#        - containerPort: 80
