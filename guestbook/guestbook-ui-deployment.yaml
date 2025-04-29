@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook-ui
-  annotations:
+#  annotations:
 #    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: argocd
-     notifications.argoproj.io/subscriptions: |
-        - trigger: [on-sync-succeeded]
-          destinations:
-            - service: slack
-              recipients: [argocd]
-            - service: email.gmail
-              recipients: [djenkins.trss@gmail.com]
+#     notifications.argoproj.io/subscriptions: |
+#        - trigger: [on-sync-succeeded]
+#          destinations:
+#            - service: slack
+#              recipients: [argocd]
+#            - service: email.gmail
+#              recipients: [djenkins.trss@gmail.com]
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: guestbook-ui
+      app: guestbook-u
   template:
     metadata:
       labels:
@@ -27,7 +27,3 @@ spec:
         name: guestbook-ui
         ports:
         - containerPort: 80
-# adding some white space
-#
-#
-# end of white space
