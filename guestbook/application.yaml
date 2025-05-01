@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/djenkins-freedom-tech/guestbook.git
     targetRevision: HEAD
-    path: guestbook
+    path: guestbo
   destination:
     server: https://kubernetes.default.svc
     namespace: guestbook
